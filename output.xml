@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generated="20180527 14:42:57.203" generator="Robot 3.0 (Python 2.7.5 on linux2)">
+<robot generated="20180527 14:52:33.245" generator="Robot 3.0 (Python 2.7.5 on linux2)">
 <suite source="/home/tester/ktrojanek89/test4_selenium.robot" id="s1" name="Test4 Selenium">
 <test id="s1-t1" name="Test1">
 <kw name="Otwórz przeglądarkę na stronie logowania">
@@ -9,10 +9,10 @@
 <arg>${LOGIN URL}</arg>
 <arg>${BROWSER}</arg>
 </arguments>
-<msg timestamp="20180527 14:42:57.309" level="INFO">Opening browser 'Firefox' to base url 'https://profil.wp.pl/login.html?zaloguj=poczta'</msg>
-<status status="PASS" endtime="20180527 14:43:03.360" starttime="20180527 14:42:57.309"></status>
+<msg timestamp="20180527 14:52:33.345" level="INFO">Opening browser 'Firefox' to base url 'https://profil.wp.pl/login.html?zaloguj=poczta'</msg>
+<status status="PASS" endtime="20180527 14:52:38.776" starttime="20180527 14:52:33.344"></status>
 </kw>
-<status status="PASS" endtime="20180527 14:43:03.360" starttime="20180527 14:42:57.308"></status>
+<status status="PASS" endtime="20180527 14:52:38.777" starttime="20180527 14:52:33.344"></status>
 </kw>
 <kw name="Wpisz użytkownika">
 <kw name="Input Text" library="Selenium2Library">
@@ -21,10 +21,10 @@
 <arg>${xu}</arg>
 <arg>${VALID USER}</arg>
 </arguments>
-<msg timestamp="20180527 14:43:03.361" level="INFO">Typing text 'testerwsb_t1' into text field '//*[@id="login"]'</msg>
-<status status="PASS" endtime="20180527 14:43:03.677" starttime="20180527 14:43:03.361"></status>
+<msg timestamp="20180527 14:52:38.778" level="INFO">Typing text 'testerwsb_t1' into text field '//*[@id="login"]'</msg>
+<status status="PASS" endtime="20180527 14:52:39.019" starttime="20180527 14:52:38.777"></status>
 </kw>
-<status status="PASS" endtime="20180527 14:43:03.677" starttime="20180527 14:43:03.360"></status>
+<status status="PASS" endtime="20180527 14:52:39.020" starttime="20180527 14:52:38.777"></status>
 </kw>
 <kw name="Wpisz hasło">
 <kw name="Input Text" library="Selenium2Library">
@@ -33,10 +33,10 @@
 <arg>${xp}</arg>
 <arg>${VALID PASSWORD}</arg>
 </arguments>
-<msg timestamp="20180527 14:43:03.678" level="INFO">Typing text 'adam1234' into text field '//*[@id="password"]'</msg>
-<status status="PASS" endtime="20180527 14:43:03.866" starttime="20180527 14:43:03.678"></status>
+<msg timestamp="20180527 14:52:39.021" level="INFO">Typing text 'adam1234' into text field '//*[@id="password"]'</msg>
+<status status="PASS" endtime="20180527 14:52:39.126" starttime="20180527 14:52:39.020"></status>
 </kw>
-<status status="PASS" endtime="20180527 14:43:03.866" starttime="20180527 14:43:03.677"></status>
+<status status="PASS" endtime="20180527 14:52:39.127" starttime="20180527 14:52:39.020"></status>
 </kw>
 <kw name="Kliknij i zaloguj się">
 <kw name="Click Button" library="Selenium2Library">
@@ -44,10 +44,10 @@
 <arguments>
 <arg>${xb}</arg>
 </arguments>
-<msg timestamp="20180527 14:43:03.867" level="INFO">Clicking button '//*[@id="btnSubmit"]'.</msg>
-<status status="PASS" endtime="20180527 14:43:10.004" starttime="20180527 14:43:03.867"></status>
+<msg timestamp="20180527 14:52:39.127" level="INFO">Clicking button '//*[@id="btnSubmit"]'.</msg>
+<status status="PASS" endtime="20180527 14:52:45.393" starttime="20180527 14:52:39.127"></status>
 </kw>
-<status status="PASS" endtime="20180527 14:43:10.004" starttime="20180527 14:43:03.866"></status>
+<status status="PASS" endtime="20180527 14:52:45.393" starttime="20180527 14:52:39.127"></status>
 </kw>
 <kw name="Sprawdz czy zalogowany">
 <kw name="Page Should Contain" library="Selenium2Library">
@@ -55,14 +55,21 @@
 <arguments>
 <arg>Odebrane</arg>
 </arguments>
-<msg timestamp="20180527 14:43:10.146" level="INFO">Current page contains text 'Odebrane'.</msg>
-<status status="PASS" endtime="20180527 14:43:10.146" starttime="20180527 14:43:10.004"></status>
+<msg timestamp="20180527 14:52:45.609" level="INFO">Current page contains text 'Odebrane'.</msg>
+<status status="PASS" endtime="20180527 14:52:45.610" starttime="20180527 14:52:45.393"></status>
 </kw>
-<status status="PASS" endtime="20180527 14:43:10.146" starttime="20180527 14:43:10.004"></status>
+<status status="PASS" endtime="20180527 14:52:45.610" starttime="20180527 14:52:45.393"></status>
 </kw>
-<status status="PASS" endtime="20180527 14:43:10.147" critical="yes" starttime="20180527 14:42:57.307"></status>
+<kw name="Zamknij przeglądarkę">
+<kw name="Close All Browsers" library="Selenium2Library">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" endtime="20180527 14:52:45.677" starttime="20180527 14:52:45.610"></status>
+</kw>
+<status status="PASS" endtime="20180527 14:52:45.678" starttime="20180527 14:52:45.610"></status>
+</kw>
+<status status="PASS" endtime="20180527 14:52:45.678" critical="yes" starttime="20180527 14:52:33.343"></status>
 </test>
-<status status="PASS" endtime="20180527 14:43:10.148" starttime="20180527 14:42:57.204"></status>
+<status status="PASS" endtime="20180527 14:52:45.679" starttime="20180527 14:52:33.246"></status>
 </suite>
 <statistics>
 <total>

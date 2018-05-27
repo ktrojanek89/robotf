@@ -17,6 +17,7 @@ Test1
    Wpisz hasło
    Kliknij i zaloguj się
    Sprawdz czy zalogowany
+   Zamknij przeglądarkę
 
 ***Keywords***
 Otwórz przeglądarkę na stronie logowania
@@ -29,3 +30,5 @@ Kliknij i zaloguj się
    Click button   ${xb}
 Sprawdz czy zalogowany
    Page Should Contain   Odebrane
+Zamknij przeglądarkę
+   Close All Browsers
