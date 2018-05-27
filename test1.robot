@@ -1,3 +1,7 @@
 ***Test Cases***
 PrzypadekTestowy1
-  log to console   wpisuje cos do konsoli
+   otwórz i wypisz
+
+***Keywords***
+otwórz i wypisz
+   log to console   dowolny tekst na konsoli

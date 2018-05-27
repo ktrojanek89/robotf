@@ -1,17 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generated="20180527 10:32:05.822" generator="Robot 3.0 (Python 2.7.5 on linux2)">
-<suite source="/home/tester/ktrojanek89/test1.robot" id="s1" name="Test1">
-<test id="s1-t1" name="PrzypadekTestowy1">
-<kw name="Log To Console" library="BuiltIn">
-<doc>Logs the given message to the console.</doc>
+<robot generated="20180527 11:54:04.305" generator="Robot 3.0 (Python 2.7.5 on linux2)">
+<suite source="/home/tester/ktrojanek89/test2.robot" id="s1" name="Test2">
+<test id="s1-t1" name="PrzypadekTestowy2">
+<kw name="otwórz terminal">
+<kw name="Open Connection" library="SSHLibrary">
+<doc>Opens a new SSH connection to the given `host` and `port`.</doc>
 <arguments>
-<arg>wpisuje cos do konsoli</arg>
+<arg>${REMOTE_HOST}</arg>
 </arguments>
-<status status="PASS" endtime="20180527 10:32:05.869" starttime="20180527 10:32:05.869"></status>
+<status status="PASS" endtime="20180527 11:54:04.368" starttime="20180527 11:54:04.367"></status>
 </kw>
-<status status="PASS" endtime="20180527 10:32:05.869" critical="yes" starttime="20180527 10:32:05.868"></status>
+<kw name="Login" library="SSHLibrary">
+<doc>Logs into the SSH server with the given `username` and `password`.</doc>
+<arguments>
+<arg>${REMOTE_USERNAME}</arg>
+<arg>${REMOTE_PASSWORD}</arg>
+</arguments>
+<msg timestamp="20180527 11:54:04.368" level="INFO">Logging into 'localhost:22' as 'tester01'.</msg>
+<msg timestamp="20180527 11:54:05.689" level="INFO">Read output: Last login: Sun May 27 11:53:39 2018 from localhost
+[tester01@tester ~]$</msg>
+<status status="PASS" endtime="20180527 11:54:05.690" starttime="20180527 11:54:04.368"></status>
+</kw>
+<status status="PASS" endtime="20180527 11:54:05.690" starttime="20180527 11:54:04.367"></status>
+</kw>
+<kw name="wypisz polecenie i sprawdz poprawnosc">
+<kw name="Execute Command" library="SSHLibrary">
+<doc>Executes `command` on the remote machine and returns its outputs.</doc>
+<arguments>
+<arg>uname -a</arg>
+</arguments>
+<assign>
+<var>${rc}</var>
+</assign>
+<msg timestamp="20180527 11:54:05.692" level="INFO">Executing command 'uname -a'.</msg>
+<msg timestamp="20180527 11:54:05.761" level="INFO">Command exited with return code 0.</msg>
+<msg timestamp="20180527 11:54:05.762" level="INFO">${rc} = Linux tester 3.10.0-327.36.1.el7.x86_64 #1 SMP Sun Sep 18 13:04:29 UTC 2016 x86_64 x86_64 x86_64 GNU/Linux</msg>
+<status status="PASS" endtime="20180527 11:54:05.762" starttime="20180527 11:54:05.692"></status>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${rc}</arg>
+<arg>Linux tester 3.10.0-327.36.1.el7.x86_64</arg>
+</arguments>
+<status status="PASS" endtime="20180527 11:54:05.762" starttime="20180527 11:54:05.762"></status>
+</kw>
+<status status="PASS" endtime="20180527 11:54:05.762" starttime="20180527 11:54:05.691"></status>
+</kw>
+<status status="PASS" endtime="20180527 11:54:05.763" critical="yes" starttime="20180527 11:54:04.366"></status>
 </test>
-<status status="PASS" endtime="20180527 10:32:05.870" starttime="20180527 10:32:05.823"></status>
+<status status="PASS" endtime="20180527 11:54:05.763" starttime="20180527 11:54:04.306"></status>
 </suite>
 <statistics>
 <total>
@@ -21,7 +59,7 @@
 <tag>
 </tag>
 <suite>
-<stat fail="0" id="s1" name="Test1" pass="1">Test1</stat>
+<stat fail="0" id="s1" name="Test2" pass="1">Test2</stat>
 </suite>
 </statistics>
 <errors>
