@@ -1,113 +1,78 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generated="20180527 12:53:30.752" generator="Robot 3.0 (Python 2.7.5 on linux2)">
-<suite source="/home/tester/ktrojanek89/test3.robot" id="s1" name="Test3">
-<test id="s1-t1" name="PrzypadekTestowy3">
-<kw name="otwórz terminal">
-<kw name="Open Connection" library="SSHLibrary">
-<doc>Opens a new SSH connection to the given `host` and `port`.</doc>
+<robot generated="20180527 14:42:57.203" generator="Robot 3.0 (Python 2.7.5 on linux2)">
+<suite source="/home/tester/ktrojanek89/test4_selenium.robot" id="s1" name="Test4 Selenium">
+<test id="s1-t1" name="Test1">
+<kw name="Otwórz przeglądarkę na stronie logowania">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
 <arguments>
-<arg>${REMOTE_HOST}</arg>
+<arg>${LOGIN URL}</arg>
+<arg>${BROWSER}</arg>
 </arguments>
-<status status="PASS" endtime="20180527 12:53:30.815" starttime="20180527 12:53:30.814"></status>
+<msg timestamp="20180527 14:42:57.309" level="INFO">Opening browser 'Firefox' to base url 'https://profil.wp.pl/login.html?zaloguj=poczta'</msg>
+<status status="PASS" endtime="20180527 14:43:03.360" starttime="20180527 14:42:57.309"></status>
 </kw>
-<kw name="Login" library="SSHLibrary">
-<doc>Logs into the SSH server with the given `username` and `password`.</doc>
+<status status="PASS" endtime="20180527 14:43:03.360" starttime="20180527 14:42:57.308"></status>
+</kw>
+<kw name="Wpisz użytkownika">
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
 <arguments>
-<arg>${REMOTE_USERNAME}</arg>
-<arg>${REMOTE_PASSWORD}</arg>
+<arg>${xu}</arg>
+<arg>${VALID USER}</arg>
 </arguments>
-<msg timestamp="20180527 12:53:30.815" level="INFO">Logging into 'localhost:22' as 'tester01'.</msg>
-<msg timestamp="20180527 12:53:32.105" level="INFO">Read output: Last login: Sun May 27 12:47:57 2018 from localhost
-[tester01@tester ~]$</msg>
-<status status="PASS" endtime="20180527 12:53:32.106" starttime="20180527 12:53:30.815"></status>
+<msg timestamp="20180527 14:43:03.361" level="INFO">Typing text 'testerwsb_t1' into text field '//*[@id="login"]'</msg>
+<status status="PASS" endtime="20180527 14:43:03.677" starttime="20180527 14:43:03.361"></status>
 </kw>
-<status status="PASS" endtime="20180527 12:53:32.106" starttime="20180527 12:53:30.814"></status>
+<status status="PASS" endtime="20180527 14:43:03.677" starttime="20180527 14:43:03.360"></status>
 </kw>
-<kw name="wypisz polecenie i sprawdz poprawnosc">
-<kw name="Execute Command" library="SSHLibrary">
-<doc>Executes `command` on the remote machine and returns its outputs.</doc>
+<kw name="Wpisz hasło">
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
 <arguments>
-<arg>uname -a</arg>
+<arg>${xp}</arg>
+<arg>${VALID PASSWORD}</arg>
 </arguments>
-<assign>
-<var>${rc}</var>
-</assign>
-<msg timestamp="20180527 12:53:32.108" level="INFO">Executing command 'uname -a'.</msg>
-<msg timestamp="20180527 12:53:32.177" level="INFO">Command exited with return code 0.</msg>
-<msg timestamp="20180527 12:53:32.177" level="INFO">${rc} = Linux tester 3.10.0-327.36.1.el7.x86_64 #1 SMP Sun Sep 18 13:04:29 UTC 2016 x86_64 x86_64 x86_64 GNU/Linux</msg>
-<status status="PASS" endtime="20180527 12:53:32.178" starttime="20180527 12:53:32.107"></status>
+<msg timestamp="20180527 14:43:03.678" level="INFO">Typing text 'adam1234' into text field '//*[@id="password"]'</msg>
+<status status="PASS" endtime="20180527 14:43:03.866" starttime="20180527 14:43:03.678"></status>
 </kw>
-<kw name="Should Contain" library="BuiltIn">
-<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" endtime="20180527 14:43:03.866" starttime="20180527 14:43:03.677"></status>
+</kw>
+<kw name="Kliknij i zaloguj się">
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks a button identified by `locator`.</doc>
 <arguments>
-<arg>${rc}</arg>
-<arg>Linux tester</arg>
+<arg>${xb}</arg>
 </arguments>
-<status status="PASS" endtime="20180527 12:53:32.178" starttime="20180527 12:53:32.178"></status>
+<msg timestamp="20180527 14:43:03.867" level="INFO">Clicking button '//*[@id="btnSubmit"]'.</msg>
+<status status="PASS" endtime="20180527 14:43:10.004" starttime="20180527 14:43:03.867"></status>
 </kw>
-<status status="PASS" endtime="20180527 12:53:32.178" starttime="20180527 12:53:32.107"></status>
+<status status="PASS" endtime="20180527 14:43:10.004" starttime="20180527 14:43:03.866"></status>
 </kw>
-<status status="PASS" endtime="20180527 12:53:32.178" critical="yes" starttime="20180527 12:53:30.813"></status>
+<kw name="Sprawdz czy zalogowany">
+<kw name="Page Should Contain" library="Selenium2Library">
+<doc>Verifies that current page contains `text`.</doc>
+<arguments>
+<arg>Odebrane</arg>
+</arguments>
+<msg timestamp="20180527 14:43:10.146" level="INFO">Current page contains text 'Odebrane'.</msg>
+<status status="PASS" endtime="20180527 14:43:10.146" starttime="20180527 14:43:10.004"></status>
+</kw>
+<status status="PASS" endtime="20180527 14:43:10.146" starttime="20180527 14:43:10.004"></status>
+</kw>
+<status status="PASS" endtime="20180527 14:43:10.147" critical="yes" starttime="20180527 14:42:57.307"></status>
 </test>
-<test id="s1-t2" name="PrzypadekTestowy4">
-<kw name="otwórz terminal">
-<kw name="Open Connection" library="SSHLibrary">
-<doc>Opens a new SSH connection to the given `host` and `port`.</doc>
-<arguments>
-<arg>${REMOTE_HOST}</arg>
-</arguments>
-<status status="PASS" endtime="20180527 12:53:32.180" starttime="20180527 12:53:32.179"></status>
-</kw>
-<kw name="Login" library="SSHLibrary">
-<doc>Logs into the SSH server with the given `username` and `password`.</doc>
-<arguments>
-<arg>${REMOTE_USERNAME}</arg>
-<arg>${REMOTE_PASSWORD}</arg>
-</arguments>
-<msg timestamp="20180527 12:53:32.180" level="INFO">Logging into 'localhost:22' as 'tester01'.</msg>
-<msg timestamp="20180527 12:53:33.502" level="INFO">Read output: Last login: Sun May 27 12:53:31 2018 from localhost
-[tester01@tester ~]$</msg>
-<status status="PASS" endtime="20180527 12:53:33.502" starttime="20180527 12:53:32.180"></status>
-</kw>
-<status status="PASS" endtime="20180527 12:53:33.503" starttime="20180527 12:53:32.179"></status>
-</kw>
-<kw name="wypisz polecenie i sprawdz poprawnosc2">
-<kw name="Execute Command" library="SSHLibrary">
-<doc>Executes `command` on the remote machine and returns its outputs.</doc>
-<arguments>
-<arg>uname -a</arg>
-</arguments>
-<assign>
-<var>${rc}</var>
-</assign>
-<msg timestamp="20180527 12:53:33.504" level="INFO">Executing command 'uname -a'.</msg>
-<msg timestamp="20180527 12:53:33.565" level="INFO">Command exited with return code 0.</msg>
-<msg timestamp="20180527 12:53:33.565" level="INFO">${rc} = Linux tester 3.10.0-327.36.1.el7.x86_64 #1 SMP Sun Sep 18 13:04:29 UTC 2016 x86_64 x86_64 x86_64 GNU/Linux</msg>
-<status status="PASS" endtime="20180527 12:53:33.565" starttime="20180527 12:53:33.504"></status>
-</kw>
-<kw name="Should Not Contain" library="BuiltIn">
-<doc>Fails if ``container`` contains ``item`` one or more times.</doc>
-<arguments>
-<arg>${rc}</arg>
-<arg>Kotek</arg>
-</arguments>
-<status status="PASS" endtime="20180527 12:53:33.566" starttime="20180527 12:53:33.566"></status>
-</kw>
-<status status="PASS" endtime="20180527 12:53:33.566" starttime="20180527 12:53:33.503"></status>
-</kw>
-<status status="PASS" endtime="20180527 12:53:33.566" critical="yes" starttime="20180527 12:53:32.179"></status>
-</test>
-<status status="PASS" endtime="20180527 12:53:33.567" starttime="20180527 12:53:30.753"></status>
+<status status="PASS" endtime="20180527 14:43:10.148" starttime="20180527 14:42:57.204"></status>
 </suite>
 <statistics>
 <total>
-<stat fail="0" pass="2">Critical Tests</stat>
-<stat fail="0" pass="2">All Tests</stat>
+<stat fail="0" pass="1">Critical Tests</stat>
+<stat fail="0" pass="1">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat fail="0" id="s1" name="Test3" pass="2">Test3</stat>
+<stat fail="0" id="s1" name="Test4 Selenium" pass="1">Test4 Selenium</stat>
 </suite>
 </statistics>
 <errors>
