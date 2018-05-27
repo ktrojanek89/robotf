@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generated="20180527 11:54:04.305" generator="Robot 3.0 (Python 2.7.5 on linux2)">
-<suite source="/home/tester/ktrojanek89/test2.robot" id="s1" name="Test2">
-<test id="s1-t1" name="PrzypadekTestowy2">
+<robot generated="20180527 12:53:30.752" generator="Robot 3.0 (Python 2.7.5 on linux2)">
+<suite source="/home/tester/ktrojanek89/test3.robot" id="s1" name="Test3">
+<test id="s1-t1" name="PrzypadekTestowy3">
 <kw name="otwórz terminal">
 <kw name="Open Connection" library="SSHLibrary">
 <doc>Opens a new SSH connection to the given `host` and `port`.</doc>
 <arguments>
 <arg>${REMOTE_HOST}</arg>
 </arguments>
-<status status="PASS" endtime="20180527 11:54:04.368" starttime="20180527 11:54:04.367"></status>
+<status status="PASS" endtime="20180527 12:53:30.815" starttime="20180527 12:53:30.814"></status>
 </kw>
 <kw name="Login" library="SSHLibrary">
 <doc>Logs into the SSH server with the given `username` and `password`.</doc>
@@ -16,12 +16,12 @@
 <arg>${REMOTE_USERNAME}</arg>
 <arg>${REMOTE_PASSWORD}</arg>
 </arguments>
-<msg timestamp="20180527 11:54:04.368" level="INFO">Logging into 'localhost:22' as 'tester01'.</msg>
-<msg timestamp="20180527 11:54:05.689" level="INFO">Read output: Last login: Sun May 27 11:53:39 2018 from localhost
+<msg timestamp="20180527 12:53:30.815" level="INFO">Logging into 'localhost:22' as 'tester01'.</msg>
+<msg timestamp="20180527 12:53:32.105" level="INFO">Read output: Last login: Sun May 27 12:47:57 2018 from localhost
 [tester01@tester ~]$</msg>
-<status status="PASS" endtime="20180527 11:54:05.690" starttime="20180527 11:54:04.368"></status>
+<status status="PASS" endtime="20180527 12:53:32.106" starttime="20180527 12:53:30.815"></status>
 </kw>
-<status status="PASS" endtime="20180527 11:54:05.690" starttime="20180527 11:54:04.367"></status>
+<status status="PASS" endtime="20180527 12:53:32.106" starttime="20180527 12:53:30.814"></status>
 </kw>
 <kw name="wypisz polecenie i sprawdz poprawnosc">
 <kw name="Execute Command" library="SSHLibrary">
@@ -32,34 +32,82 @@
 <assign>
 <var>${rc}</var>
 </assign>
-<msg timestamp="20180527 11:54:05.692" level="INFO">Executing command 'uname -a'.</msg>
-<msg timestamp="20180527 11:54:05.761" level="INFO">Command exited with return code 0.</msg>
-<msg timestamp="20180527 11:54:05.762" level="INFO">${rc} = Linux tester 3.10.0-327.36.1.el7.x86_64 #1 SMP Sun Sep 18 13:04:29 UTC 2016 x86_64 x86_64 x86_64 GNU/Linux</msg>
-<status status="PASS" endtime="20180527 11:54:05.762" starttime="20180527 11:54:05.692"></status>
+<msg timestamp="20180527 12:53:32.108" level="INFO">Executing command 'uname -a'.</msg>
+<msg timestamp="20180527 12:53:32.177" level="INFO">Command exited with return code 0.</msg>
+<msg timestamp="20180527 12:53:32.177" level="INFO">${rc} = Linux tester 3.10.0-327.36.1.el7.x86_64 #1 SMP Sun Sep 18 13:04:29 UTC 2016 x86_64 x86_64 x86_64 GNU/Linux</msg>
+<status status="PASS" endtime="20180527 12:53:32.178" starttime="20180527 12:53:32.107"></status>
 </kw>
 <kw name="Should Contain" library="BuiltIn">
 <doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
 <arguments>
 <arg>${rc}</arg>
-<arg>Linux tester 3.10.0-327.36.1.el7.x86_64</arg>
+<arg>Linux tester</arg>
 </arguments>
-<status status="PASS" endtime="20180527 11:54:05.762" starttime="20180527 11:54:05.762"></status>
+<status status="PASS" endtime="20180527 12:53:32.178" starttime="20180527 12:53:32.178"></status>
 </kw>
-<status status="PASS" endtime="20180527 11:54:05.762" starttime="20180527 11:54:05.691"></status>
+<status status="PASS" endtime="20180527 12:53:32.178" starttime="20180527 12:53:32.107"></status>
 </kw>
-<status status="PASS" endtime="20180527 11:54:05.763" critical="yes" starttime="20180527 11:54:04.366"></status>
+<status status="PASS" endtime="20180527 12:53:32.178" critical="yes" starttime="20180527 12:53:30.813"></status>
 </test>
-<status status="PASS" endtime="20180527 11:54:05.763" starttime="20180527 11:54:04.306"></status>
+<test id="s1-t2" name="PrzypadekTestowy4">
+<kw name="otwórz terminal">
+<kw name="Open Connection" library="SSHLibrary">
+<doc>Opens a new SSH connection to the given `host` and `port`.</doc>
+<arguments>
+<arg>${REMOTE_HOST}</arg>
+</arguments>
+<status status="PASS" endtime="20180527 12:53:32.180" starttime="20180527 12:53:32.179"></status>
+</kw>
+<kw name="Login" library="SSHLibrary">
+<doc>Logs into the SSH server with the given `username` and `password`.</doc>
+<arguments>
+<arg>${REMOTE_USERNAME}</arg>
+<arg>${REMOTE_PASSWORD}</arg>
+</arguments>
+<msg timestamp="20180527 12:53:32.180" level="INFO">Logging into 'localhost:22' as 'tester01'.</msg>
+<msg timestamp="20180527 12:53:33.502" level="INFO">Read output: Last login: Sun May 27 12:53:31 2018 from localhost
+[tester01@tester ~]$</msg>
+<status status="PASS" endtime="20180527 12:53:33.502" starttime="20180527 12:53:32.180"></status>
+</kw>
+<status status="PASS" endtime="20180527 12:53:33.503" starttime="20180527 12:53:32.179"></status>
+</kw>
+<kw name="wypisz polecenie i sprawdz poprawnosc2">
+<kw name="Execute Command" library="SSHLibrary">
+<doc>Executes `command` on the remote machine and returns its outputs.</doc>
+<arguments>
+<arg>uname -a</arg>
+</arguments>
+<assign>
+<var>${rc}</var>
+</assign>
+<msg timestamp="20180527 12:53:33.504" level="INFO">Executing command 'uname -a'.</msg>
+<msg timestamp="20180527 12:53:33.565" level="INFO">Command exited with return code 0.</msg>
+<msg timestamp="20180527 12:53:33.565" level="INFO">${rc} = Linux tester 3.10.0-327.36.1.el7.x86_64 #1 SMP Sun Sep 18 13:04:29 UTC 2016 x86_64 x86_64 x86_64 GNU/Linux</msg>
+<status status="PASS" endtime="20180527 12:53:33.565" starttime="20180527 12:53:33.504"></status>
+</kw>
+<kw name="Should Not Contain" library="BuiltIn">
+<doc>Fails if ``container`` contains ``item`` one or more times.</doc>
+<arguments>
+<arg>${rc}</arg>
+<arg>Kotek</arg>
+</arguments>
+<status status="PASS" endtime="20180527 12:53:33.566" starttime="20180527 12:53:33.566"></status>
+</kw>
+<status status="PASS" endtime="20180527 12:53:33.566" starttime="20180527 12:53:33.503"></status>
+</kw>
+<status status="PASS" endtime="20180527 12:53:33.566" critical="yes" starttime="20180527 12:53:32.179"></status>
+</test>
+<status status="PASS" endtime="20180527 12:53:33.567" starttime="20180527 12:53:30.753"></status>
 </suite>
 <statistics>
 <total>
-<stat fail="0" pass="1">Critical Tests</stat>
-<stat fail="0" pass="1">All Tests</stat>
+<stat fail="0" pass="2">Critical Tests</stat>
+<stat fail="0" pass="2">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat fail="0" id="s1" name="Test2" pass="1">Test2</stat>
+<stat fail="0" id="s1" name="Test3" pass="2">Test3</stat>
 </suite>
 </statistics>
 <errors>
